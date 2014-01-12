@@ -1,0 +1,35 @@
+<?php
+
+  
+       $a=array();
+
+
+       $name=array("ball","price","description")  ;
+
+       array_push($a,$name);
+       $name1=array("ball1","price1","description1")  ;
+
+        array_push($a,$name1);
+       $name2=array("ball2","price2","description2")  ;
+    
+
+        array_push($a,$name2);
+       
+
+        $intt;
+
+      for($i=0;$i<count($a);$i++){
+
+           if( in_array("description2",$a[$i])){
+
+                  $intt=$i ; 
+
+               }
+ 
+        }
+
+       echo $intt;
+ 
+
+
+?>

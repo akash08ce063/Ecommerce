@@ -1,0 +1,42 @@
+<?php
+
+  
+  function connection(){
+
+  mysql_connect("localhost","root","");
+
+  mysql_select_db("ecommerce") or die("Database cannot connect");
+  
+  echo "database sucess" ;
+  
+  }
+
+  function getdata($sql){
+
+  $result=mysql_query($sql);
+  
+ 
+
+   return $result ;
+
+  
+  }
+  
+
+  connection() ;
+
+ $result=  getdata("SELECT * FROM `sports_data` WHERE `sub_id`=1");
+
+ while($row=mysql_fetch_assoc($result)){
+
+
+         $a = $row['name'];
+        
+ //     echo "<img src='ball\'.$row['name'].'jpg' height='200' weight='200'>Akash</a>" ;
+ 
+    echo  '<a href="ball/',$row['name'],'.jpg?=',$row['last_id'],'"><img src="ball/',$row['name'],'.jpg?=',$row['sub_id'],'"  height="200" width="200"alt="" /></a>' .$row['description'] ;
+   }
+
+
+
+?>
